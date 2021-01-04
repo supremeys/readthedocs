@@ -1,0 +1,251 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>QuecPython FAQ&amp;DEBUG &mdash; QuecPython 1.0.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> QuecPython
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">QuecPython FAQ&amp;DEBUG</a><ul>
+<li><a class="reference internal" href="#id1">QuecPython FAQ&amp;Debug文档</a></li>
+<li><a class="reference internal" href="#quecpython">QuecPython 救砖处理</a></li>
+<li><a class="reference internal" href="#quecpython-main-py">QuecPython main.py文件使用</a></li>
+<li><a class="reference internal" href="#quecpython-mqtt">QuecPython MQTT连接异常处理</a></li>
+<li><a class="reference internal" href="#id2">QuecPython 驱动安装失败问题解决</a></li>
+<li><a class="reference internal" href="#quecpython-apn-cfg-json">QuecPython apn_cfg.json文件解析</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QuecPython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>QuecPython FAQ&amp;DEBUG</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/QuecPython FAQ&amp;DEBUG.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="quecpython-faq-debug">
+<h1>QuecPython FAQ&amp;DEBUG<a class="headerlink" href="#quecpython-faq-debug" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id1">
+<h2>QuecPython FAQ&amp;Debug文档<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>详见文档《QuecPython FAQ&amp;Debug文档》</p></li>
+</ul>
+</div>
+<div class="section" id="quecpython">
+<h2>QuecPython 救砖处理<a class="headerlink" href="#quecpython" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>如何解决：详见文档《Quectel QuecPython_QPYcom工具使用说明_V1.0》</p></li>
+</ul>
+</div>
+<div class="section" id="quecpython-main-py">
+<h2>QuecPython main.py文件使用<a class="headerlink" href="#quecpython-main-py" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>如何使用main.py&amp;使用过程中问题解决</p></li>
+</ul>
+<ol class="simple">
+<li><p>现象：上传py文件且文件名为main.py到模块后无法任何执行指令（包括上传文件等）</p></li>
+<li><p>导致原因：模块在开机后会自动寻找运行文件名为main.py的脚本文件，如果main.py中存在while，for(,,)这种循环语句，会导致程序阻塞，串口被占用，无法进行其他操作</p></li>
+<li><p>如何解决：目前版本只能通过重刷固件解决，建议在测试阶段尽量不要使用main.py作为入口文件，可使用start.py或其它命名来手动拉起项目，避免重刷固件。</p></li>
+</ol>
+</div>
+<div class="section" id="quecpython-mqtt">
+<h2>QuecPython MQTT连接异常处理<a class="headerlink" href="#quecpython-mqtt" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>导致原因： MQTT服务端会有心跳检测机制，一段时间内设备与云端没有通信活动会主动断开连接</p></li>
+<li><p>尝试解决方向：连接断开是依据配置mqtt时的超时值keepalive，在超出活动时间后会主动断开连接，我们可以根据设置keepalive活动时间使用定时器在活动时间超出前主动向云端发送ping包，服务端返回的数据包无需客户处理。</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>QuecPython 驱动安装失败问题解决<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>现象：安装EC100Y-CN 所需驱动Quectel_ASR_Series_UMTS&amp;LTE_Windows_USB_Driver_Customer_V1.0.3.zip 后，发现在 Windows7 下未正常识别出模块的指令交互串口。</p></li>
+<li><p>导致原因：Windows7 下无法使用 Microsoft 的 USB 串行设备驱动程序。</p></li>
+<li><p>如何解决：详见文档《EC100Y-CN_windows7 安装 USB 驱动指令交互串口未识别解决方法 V1.0.pdf》</p></li>
+</ul>
+</div>
+<div class="section" id="quecpython-apn-cfg-json">
+<h2>QuecPython apn_cfg.json文件解析<a class="headerlink" href="#quecpython-apn-cfg-json" title="永久链接至标题">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, rivern
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

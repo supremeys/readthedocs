@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>QuecPython概述 &mdash; QuecPython 1.0.0 文档</title>
+  <title>QuecPython 产品开发及量产 &mdash; QuecPython 1.0.0 文档</title>
   
 
   
@@ -49,7 +49,7 @@
           
 
           
-            <a href="#" class="icon icon-home" alt="Documentation Home"> QuecPython
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> QuecPython
           
 
           
@@ -82,9 +82,18 @@
             
               <!-- Local TOC -->
               <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">QuecPython概述</a><ul>
-<li><a class="reference internal" href="#id1">初识QuecPython</a></li>
-<li><a class="reference internal" href="#id2">探秘QuecPython技术架构</a></li>
+<li><a class="reference internal" href="#">QuecPython 产品开发及量产</a><ul>
+<li><a class="reference internal" href="#id1">量产流程</a></li>
+<li><a class="reference internal" href="#id2">量产工具使用文档</a><ul>
+<li><a class="reference internal" href="#qpycom-exe">QPYcom.exe</a></li>
+<li><a class="reference internal" href="#multidownload-exe">MultiDownload.exe</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3">代码保护</a><ul>
+<li><a class="reference internal" href="#id4">代码加密</a></li>
+<li><a class="reference internal" href="#id5">关闭控制台</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -102,7 +111,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">QuecPython</a>
+          <a href="index.html">QuecPython</a>
         
       </nav>
 
@@ -131,15 +140,15 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>QuecPython概述</li>
+      <li>QuecPython 产品开发及量产</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/index.md.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/QuecPython产品开发及量产.md.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -152,24 +161,43 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <hr class="docutils" />
-<hr class="docutils" />
-<div class="section" id="quecpython">
-<h1>QuecPython概述<a class="headerlink" href="#quecpython" title="永久链接至标题">¶</a></h1>
+  <div class="section" id="quecpython">
+<h1>QuecPython 产品开发及量产<a class="headerlink" href="#quecpython" title="永久链接至标题">¶</a></h1>
 <div class="section" id="id1">
-<h2>初识QuecPython<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2>量产流程<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>QuecPython 生产固件包含3个部分：</p>
 <ul class="simple">
-<li><p>QuecPython的由来</p></li>
-<li><p>QuecPython与Micropython关系 &amp;Micropython源码获取</p></li>
-<li><p>QuecPython与C-SDK关系</p></li>
-<li><p>QuecPython技术特性</p></li>
-<li><p>QuecPython的适用场景</p></li>
+<li><p>支持QuecPython 运行环境的固件</p></li>
 </ul>
+<p>固件可以从SDK 中获取，也可以通过QPYCom.exe 下载最新版本，当前固件最新版本是v0008。</p>
+<ul class="simple">
+<li><p>包含客户脚本/配置文件的镜像</p></li>
+</ul>
+<p>customer_fs.bin由QPYcom.exe生成，下载界面选择要合并的脚本/配置文件点击合并按钮生成customer_fs.bin。</p>
+<ul class="simple">
+<li><p>包含客户脚本/配置文件备份的镜像</p></li>
+</ul>
+<p>customer_backup_fs.bin，由QPYcom.exe生成，脚本如需备份，需要勾选备份选项，在合成时会在customer_backup_fs 中放置相应文件的备份，customer_fs 中的文件如果发生损坏或者丢失，那么会从备份区还原成工厂版本。</p>
 </div>
 <div class="section" id="id2">
-<h2>探秘QuecPython技术架构<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>​	For full documentation visit <a class="reference external" href="http://python.quectel.com/.">http://python.quectel.com/.</a></p>
-<p>​</p>
+<h2>量产工具使用文档<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="qpycom-exe">
+<h3>QPYcom.exe<a class="headerlink" href="#qpycom-exe" title="永久链接至标题">¶</a></h3>
+<p>QuecPython 调试以及量产包生成工具，主要功能有固件下载、在线调试、量产包生成等，详细使用说明参见《Quectel QuecPython_QPYcom工具使用说明_V1.0.docx》。</p>
+</div>
+<div class="section" id="multidownload-exe">
+<h3>MultiDownload.exe<a class="headerlink" href="#multidownload-exe" title="永久链接至标题">¶</a></h3>
+<p>移远提供给客户的多口下载工具，支持一拖多下载，详细使用说明参见《Quectel_QMulti_DL_用户指导_V1.7.pdf》</p>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>代码保护<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id4">
+<h3>代码加密<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id5">
+<h3>关闭控制台<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h3>
+</div>
 </div>
 </div>
 

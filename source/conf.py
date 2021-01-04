@@ -16,7 +16,12 @@
 
 
 # -- Project information -----------------------------------------------------
+from recommonmark.parser import CommonMarkParser
+source_parsers = {
+    '.md': CommonMarkParser,
+}
 
+source_suffix = ['.rst', '.md']
 project = 'QuecPython'
 copyright = '2020, rivern'
 author = 'rivern'

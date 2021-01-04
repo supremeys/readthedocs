@@ -1,0 +1,1504 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>QuecPython标准库介绍 &mdash; QuecPython 1.0.0 文档</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> QuecPython
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">QuecPython标准库介绍</a><ul>
+<li><a class="reference internal" href="#uos">uos - 基本系统服务</a></li>
+<li><a class="reference internal" href="#gc">gc - 内存碎片回收</a></li>
+<li><a class="reference internal" href="#ubinascii-ascii">ubinascii - 二进制与ASCII转换</a></li>
+<li><a class="reference internal" href="#ucollections">ucollections - 集合和容器类型</a></li>
+<li><a class="reference internal" href="#urandom">urandom - 生成随机数</a></li>
+<li><a class="reference internal" href="#math">math - 数学运算</a></li>
+<li><a class="reference internal" href="#usocket-socket">usocket - socket模块</a></li>
+<li><a class="reference internal" href="#uio">uio - 输入输出流</a></li>
+<li><a class="reference internal" href="#ustruct">ustruct - 打包和解压原始数据类型</a></li>
+<li><a class="reference internal" href="#ujson-json">ujson - JSON编码和解码</a></li>
+<li><a class="reference internal" href="#utime">utime - 与时间相关功能</a></li>
+<li><a class="reference internal" href="#sys">sys - 系统相关功能</a></li>
+<li><a class="reference internal" href="#uzlib-zlib">uzlib - zlib解压缩</a></li>
+<li><a class="reference internal" href="#thread">_thread - 多线程</a></li>
+<li><a class="reference internal" href="#uhashlib">uhashlib - 哈希算法</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">QuecPython</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>QuecPython标准库介绍</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/QuecPython标准库介绍.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="quecpython">
+<h1>QuecPython标准库介绍<a class="headerlink" href="#quecpython" title="永久链接至标题">¶</a></h1>
+<p>QuecPython标准库</p>
+<div class="section" id="uos">
+<h2>uos - 基本系统服务<a class="headerlink" href="#uos" title="永久链接至标题">¶</a></h2>
+<p>uos模块包含文件系统访问和挂载构建，该模块实现了CPython模块相应模块的子集。更多信息请参阅阅CPython文档：<a class="reference external" href="https://docs.python.org/3.5/library/os.html#module-os">os</a></p>
+<blockquote>
+<div><p><strong>uos.remove(path)</strong></p>
+</div></blockquote>
+<p>删除文件。path表示文件名。</p>
+<blockquote>
+<div><p><strong>uos.chdir(path)</strong></p>
+</div></blockquote>
+<p>改变当前目录。path表示目录名。</p>
+<blockquote>
+<div><p><strong>uos.getcwd()</strong></p>
+</div></blockquote>
+<p>获取当前路径。</p>
+<blockquote>
+<div><p><strong>uos.listdir( [dir] )</strong></p>
+</div></blockquote>
+<p>没有参数列出当前目录文件，否则列出给定目录的文件。dir为可选参数，表示目录名，默认为 ‘/’ 目录。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">uos</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
+<span class="go">[‘file1’, ‘read.txt’, ‘demo.py’]</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>uos.mkdir(path)</strong></p>
+</div></blockquote>
+<p>创建一个新的目录。path表示准备创建的目录名。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">uos</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;testdir&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uos</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
+<span class="go">[‘file1’, ‘read.txt’, ‘demo.py’, &#39;testdir&#39;]</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>uos.rename(old_path, new_path)</strong></p>
+</div></blockquote>
+<p>重命名文件。old_path表示旧文件或目录名，new_path表示新文件或目录名。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">uos</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;testdir&#39;</span><span class="p">,</span> <span class="s1">&#39;testdir1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>uos.rmdir(path)</strong></p>
+</div></blockquote>
+<p>删除指定目录。path表示目录名。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">uos</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="s1">&#39;testdir&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uos</span><span class="o">.</span><span class="n">listdir</span><span class="p">()</span>
+<span class="go">[‘file1’, ‘read.txt’, ‘demo.py’]</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>uos.ilistdir( [dir] )</strong></p>
+</div></blockquote>
+<p>该函数返回一个迭代器，该迭代器会生成所列出条目对应的3元组。dir为可选参数，表示目录名，没有参数时，默认列出当前目录，有参数时，则列出dir参数指定的目录。元组的形式为 <code class="docutils literal notranslate"><span class="pre">(name,</span> <span class="pre">type,</span> <span class="pre">inode[,</span> <span class="pre">size])</span></code>:</p>
+<ul class="simple">
+<li><p>name 是条目的名称，字符串类型，如果dir是字节对象，则名称为字节;</p></li>
+<li><p>type 是条目的类型，整型数，0x4000表示目录，0x8000表示常规文件；</p></li>
+<li><p>是一个与文件的索引节点相对应的整数，对于没有这种概念的文件系统来说，可能为0；</p></li>
+<li><p>一些平台可能会返回一个4元组，其中包含条目的size。对于文件条目，size表示文件大小的整数，如果未知，则为-1。对于目录项，其含义目前尚未定义。</p></li>
+</ul>
+<blockquote>
+<div><p><strong>uos.stat(path)</strong></p>
+</div></blockquote>
+<p>获取文件或目录的状态。path表示文件或目录名。返回值是一个元组，返回值形式为：</p>
+<p><code class="docutils literal notranslate"><span class="pre">(mode,</span> <span class="pre">ino,</span> <span class="pre">dev,</span> <span class="pre">nlink,</span> <span class="pre">uid,</span> <span class="pre">gid,</span> <span class="pre">size,</span> <span class="pre">atime,</span> <span class="pre">mtime,</span> <span class="pre">ctime)</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mode</span></code> – inode保护模式</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ino</span></code> – inode节点号</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dev</span></code>  – inode驻留的设备</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nlink</span></code>  – inode的链接数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">uid</span> </code> – 所有者的用户ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gid</span></code>  – 所有者的组ID</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>  – 文件大小，单位字节</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">atime</span></code>  – 上次访问的时间</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mtime</span></code>  – 最后一次修改的时间</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ctime</span></code>  – 操作系统报告的“ctime”，在某些系统上是最新的元数据更改的时间，在其它系统上是创建时间，详细信息参见平台文档</p></li>
+</ul>
+<blockquote>
+<div><p><strong>uos.statvfs(path)</strong></p>
+</div></blockquote>
+<p>获取文件系统状态信息。path表示文件或目录名。返回一个包含文件系统信息的元组：</p>
+<p><code class="docutils literal notranslate"><span class="pre">(f_bsize,</span> <span class="pre">f_frsize,</span> <span class="pre">f_blocks,</span> <span class="pre">f_bfree,</span> <span class="pre">f_bavail,</span> <span class="pre">f_files,</span> <span class="pre">f_ffree,</span> <span class="pre">f_favail,</span> <span class="pre">f_flag,</span> <span class="pre">f_namemax)</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">f_bsize</span></code> – 文件系统块大小，单位字节</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f_frsize</span></code> – 分栈大小，单位字节</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f_blocks</span></code> – 文件系统数据块总数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f_bfree</span></code> – 可用块数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f_bavai</span></code> – 非超级用户可获取的块数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f_files</span></code>  – 文件结点总数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f_ffree</span></code> – 可用文件结点数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f_favail</span></code> – 超级用户的可用文件结点数</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f_flag</span></code> – 挂载标记</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">f_namemax</span></code> – 最大文件长度，单位字节</p></li>
+</ul>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">uos</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">uos</span><span class="o">.</span><span class="n">statvfs</span><span class="p">(</span><span class="s2">&quot;main.py&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="go">(4096, 4096, 256, 249, 249, 0, 0, 0, 0, 255)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>uos.uname()</strong></p>
+</div></blockquote>
+<p>获取关于底层信息或其操作系统的信息。返回一个元组，形式为：</p>
+<p><code class="docutils literal notranslate"><span class="pre">(sysname,</span> <span class="pre">nodename,</span> <span class="pre">release,</span> <span class="pre">version,</span> <span class="pre">machine)</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sysname</span></code> – 底层系统的名称，string类型</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nodename</span></code> – 网络名称(可以与 sysname 相同) ，string类型</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">release</span></code> – 底层系统的版本，string类型</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">version</span></code> – MicroPython版本和构建日期，string类型</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">machine</span></code> – 底层硬件(如主板、CPU)的标识符，string类型</p></li>
+</ul>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">uos</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uos</span><span class="o">.</span><span class="n">uname</span><span class="p">()</span>
+<span class="go">(sysname=&#39;EC100Y&#39;, nodename=&#39;EC100Y&#39;, release=&#39;1.12.0&#39;, version=&#39;v1.12 on 2020-06-23&#39;, machine=&#39;EC100Y with QUECTEL&#39;)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>uos.urandom(n)</strong></p>
+</div></blockquote>
+<p>返回具有<em>n个</em>随机字节的bytes对象，只要有可能，它就会由硬件随机数生成器生成。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">uos</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uos</span><span class="o">.</span><span class="n">urandom</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">b&#39;\xb3\xc9Y\x1b\xe9&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="gc">
+<h2>gc - 内存碎片回收<a class="headerlink" href="#gc" title="永久链接至标题">¶</a></h2>
+<p>gc 模块实现内存垃圾回收机制，该模块实现了CPython模块相应模块的子集。更多信息请参阅阅CPython文档：<a class="reference external" href="https://docs.python.org/3.5/library/gc.html#module-gc">gc</a></p>
+<blockquote>
+<div><p><strong>gc.enable()</strong></p>
+</div></blockquote>
+<p>启用自动回收内存碎片机制。</p>
+<blockquote>
+<div><p><strong>gc.disable()</strong></p>
+</div></blockquote>
+<p>禁用自动回收机制。</p>
+<blockquote>
+<div><p><strong>gc.collect()</strong></p>
+</div></blockquote>
+<p>回收内存碎片。</p>
+<blockquote>
+<div><p><strong>gc.mem_alloc()</strong></p>
+</div></blockquote>
+<p>返回分配的堆RAM的字节数。此功能是MicroPython扩展。</p>
+<blockquote>
+<div><p><strong>gc.mem_free()</strong></p>
+</div></blockquote>
+<p>返回可用堆RAM的字节数，如果此数量未知，则返回-1。此功能是MicroPython扩展。</p>
+</div>
+<div class="section" id="ubinascii-ascii">
+<h2>ubinascii - 二进制与ASCII转换<a class="headerlink" href="#ubinascii-ascii" title="永久链接至标题">¶</a></h2>
+<p>ubinascii 模块实现了二进制数据与各种ASCII编码之间的转换(双向)，该模块实现了CPython模块相应模块的子集。更多信息请参阅阅CPython文档：<a class="reference external" href="https://docs.python.org/3.5/library/binascii.html#module-binascii">binascii</a></p>
+<blockquote>
+<div><p><strong>ubinascii.a2b_base64(data)</strong></p>
+</div></blockquote>
+<p>解码base64编码的数据，会自动忽略输入中的无效字符，返回 bytes 对象。</p>
+<blockquote>
+<div><p>ubinascii.b2a_base64(data)</p>
+</div></blockquote>
+<p>以base64格式编码二进制数据，返回编码数据。后面跟换行符，作为 bytes 对象。</p>
+<blockquote>
+<div><p><strong>ubinascii.hexlify(data, [sep])</strong></p>
+</div></blockquote>
+<p>将二进制数据转换为十六进制字符串表示。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ubinascii</span>
+<span class="go"># 没有sep参数</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ubinascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\x11\x22</span><span class="s1">123&#39;</span><span class="p">)</span>
+<span class="go">b&#39;1122313233&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ubinascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="s1">&#39;abcdfg&#39;</span><span class="p">)</span>
+<span class="go">b&#39;616263646667&#39;</span>
+<span class="go"># 指定了第二个参数sep，它将用于分隔两个十六进制数</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ubinascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\x11\x22</span><span class="s1">123&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="go">b&#39;11 22 31 32 33&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ubinascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\x11\x22</span><span class="s1">123&#39;</span><span class="p">,</span> <span class="s1">&#39;,&#39;</span><span class="p">)</span>
+<span class="go">b&#39;11,22,31,32,33&#39;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>ubinascii.unhexlify(data)</strong></p>
+</div></blockquote>
+<p>将十六进制形式的字符串转换成二进制形式的字符串表示。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ubinascii</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ubinascii</span><span class="o">.</span><span class="n">unhexlify</span><span class="p">(</span><span class="s1">&#39;313222&#39;</span><span class="p">)</span>
+<span class="go">b&#39;12&quot;&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ucollections">
+<h2>ucollections - 集合和容器类型<a class="headerlink" href="#ucollections" title="永久链接至标题">¶</a></h2>
+<p>ucollections 模块用于创建一个新的容器类型，用于保存各种对象。该模块实现了CPython模块相应模块的子集。更多信息请参阅阅CPython文档：<a class="reference external" href="https://docs.python.org/3.5/library/collections.html#module-collections">collections</a></p>
+<blockquote>
+<div><p><strong>mytuple = ucollections.namedtuple(name, fields)</strong></p>
+</div></blockquote>
+<p>创建一个具有特定名称和一组字段的新namedtuple容器类型，namedtuple是元组的子类，允许通过索引来访问它的字段。</p>
+<p>参数</p>
+<p>| 参数   | 参数类型 | 参数说明                       |
+| —— | ——– | —————————— |
+| name   | str      | 新创建容器的类型名称           |
+| fields | tuple    | 新创建容器类型包含子类型的字段 |</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ucollections</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mytuple</span> <span class="o">=</span> <span class="n">ucollections</span><span class="o">.</span><span class="n">namedtuple</span><span class="p">(</span><span class="s2">&quot;mytuple&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t1</span> <span class="o">=</span> <span class="n">mytuple</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;foo&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t2</span> <span class="o">=</span> <span class="n">mytuple</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="go">foo</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>dq = ucollections.deque(iterable, maxlen, flag)</strong></p>
+</div></blockquote>
+<p>创建deque双向队列</p>
+<ul class="simple">
+<li><p>参数</p></li>
+</ul>
+<p>| 参数     | 参数类型 | 参数说明                                                     |
+| ——– | ——– | ———————————————————— |
+| iterable | tuple    | iterable必须是空元组                                         |
+| maxlen   | int      | 指定maxlen并将双端队列限制为此最大长度                       |
+| flag     | int      | 可选参数；0(默认)：不检查队列是否溢出，达到最大长度时继续append会丢弃之前的值  ，1：当队列达到最大设定长度会抛出IndexError: full |</p>
+<ul class="simple">
+<li><p>返回值</p></li>
+</ul>
+<p>deque对象</p>
+<p><strong>deque对象方法</strong></p>
+<blockquote>
+<div><p>​	<strong>dq.append(data)</strong></p>
+</div></blockquote>
+<p>往队列中插入值。</p>
+<ul class="simple">
+<li><p>参数</p></li>
+</ul>
+<p>| 参数 | 参数类型     | 参数说明             |
+| —- | ———— | ——————– |
+| data | 基本数据类型 | 需要添加到队列的数值 |</p>
+<ul class="simple">
+<li><p>返回值</p></li>
+</ul>
+<p>无</p>
+<blockquote>
+<div><p>​	<strong>dq.popleft()</strong></p>
+</div></blockquote>
+<p>从deque的左侧移除并返回移除的数据。如果没有deque为空，会引起索引错误</p>
+<ul class="simple">
+<li><p>参数</p></li>
+</ul>
+<p>无</p>
+<ul class="simple">
+<li><p>返回值</p></li>
+</ul>
+<p>返回pop出的值</p>
+<p><strong>使用示例</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ucollections</span> <span class="kn">import</span> <span class="n">deque</span>
+
+<span class="n">dq</span> <span class="o">=</span> <span class="n">deque</span><span class="p">((),</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">dq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">dq</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">])</span>
+<span class="n">dq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span>
+
+<span class="n">dq</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>  <span class="c1"># 1</span>
+<span class="n">dq</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>  <span class="c1"># [&quot;a&quot;]</span>
+<span class="n">dq</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>  <span class="c1"># a</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="urandom">
+<h2>urandom - 生成随机数<a class="headerlink" href="#urandom" title="永久链接至标题">¶</a></h2>
+<p>urandom 模块提供了生成随机数的工具。</p>
+<blockquote>
+<div><p><strong>urandom.choice(obj)</strong></p>
+</div></blockquote>
+<p>随机生成对象 obj 中的元素，obj 类型 string。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urandom</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urandom</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="s2">&quot;QuecPython&quot;</span><span class="p">)</span>
+<span class="go">&#39;t&#39;</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>urandom.getrandbits(k)</strong></p>
+</div></blockquote>
+<p>随机产生一个k比特长的随机整数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urandom</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urandom</span><span class="o">.</span><span class="n">getrandbits</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1">#1位二进制位，范围为0~1（十进制：0~1）</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urandom</span><span class="o">.</span><span class="n">getrandbits</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urandom</span><span class="o">.</span><span class="n">getrandbits</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>  <span class="c1">#8位二进制位，范围为0000 0000~1111 11111（十进制：0~255）</span>
+<span class="go">224</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>urandom.randint(start, end)</strong></p>
+</div></blockquote>
+<p>随机生成一个 start 到 end 之间的整数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urandom</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urandom</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urandom</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>urandom.random()</strong></p>
+</div></blockquote>
+<p>随机生成一个 0 到 1 之间的浮点数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urandom</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urandom</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="go">0.8465231</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>urandom.randrange(start, end, step)</strong></p>
+</div></blockquote>
+<p>随机生成 start 到 end 间并且递增为 step 的正整数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urandom</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urandom</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urandom</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>urandom.seed(sed)</strong></p>
+</div></blockquote>
+<p>指定随机数种子，通常和其它随机数生成函数搭配使用。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urandom</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urandom</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>  <span class="c1">#指定随机数种子</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">):</span> <span class="c1">#生成0~15范围内的随机序列</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">urandom</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="gp">... </span>    
+<span class="go">8</span>
+<span class="go">10</span>
+<span class="go">9</span>
+<span class="go">10</span>
+<span class="go">2</span>
+<span class="go">1</span>
+<span class="go">9</span>
+<span class="go">3</span>
+<span class="go">2</span>
+<span class="go">2</span>
+<span class="go">6</span>
+<span class="go">1</span>
+<span class="go">10</span>
+<span class="go">9</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>urandom.uniform(start, end)</strong></p>
+</div></blockquote>
+<p>随机生成 start 到 end 范围内的浮点数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urandom</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urandom</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">3.219261</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urandom</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="go">4.00403</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="math">
+<h2>math - 数学运算<a class="headerlink" href="#math" title="永久链接至标题">¶</a></h2>
+<p>math 模块提供数学运算函数。该模块实现相应CPython模块的子集。更多信息请参阅阅CPython文档：<a class="reference external" href="https://docs.python.org/3.5/library/math.html#module-math">math</a></p>
+<blockquote>
+<div><p><strong>math.pow(x, y)</strong></p>
+</div></blockquote>
+<p>返回x的y次方，返回值是浮点数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">8.0</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.acos(x)</strong></p>
+</div></blockquote>
+<p>返回x的反余弦弧度值，返回值为浮点数。x是-1~1之间的数，包括-1和1，如果小于-1或者大于1，会产生错误。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">acos</span><span class="p">(</span><span class="mf">0.6</span><span class="p">)</span>
+<span class="go">0.9272952</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.asin(x)</strong></p>
+</div></blockquote>
+<p>返回x的反正弦弧度值，返回值为浮点数。x是-1~1之间的数，包括-1和1，如果小于-1或者大于1，会产生错误。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">asin</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">-1.570796</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.atan(x)</strong></p>
+</div></blockquote>
+<p>返回x的反正切弧度值，返回值为浮点数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">atan</span><span class="p">(</span><span class="o">-</span><span class="mi">8</span><span class="p">)</span>
+<span class="go">-1.446441</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">atan</span><span class="p">(</span><span class="mf">6.4</span><span class="p">)</span>
+<span class="go">1.4158</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.atan2(x, y)</strong></p>
+</div></blockquote>
+<p>返回给定的 X 及 Y 坐标值的反正切值，返回值为浮点数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="o">-</span><span class="mf">0.50</span><span class="p">,</span><span class="mf">0.48</span><span class="p">)</span>
+<span class="go">-0.8058035</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">atan2</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="go">0.6610432</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.ceil(x)</strong></p>
+</div></blockquote>
+<p>返回数字的上入整数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">4.1</span><span class="p">)</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.copysign(x, y)</strong></p>
+</div></blockquote>
+<p>把y的正负号加到x前面，可以使用0，返回值为浮点数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">copysign</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">5.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">copysign</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">)</span>
+<span class="go">-5.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">copysign</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="go">5.0</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.cos(x)</strong></p>
+</div></blockquote>
+<p>返回x的弧度的余弦值，范围再-1~1之间，返回值为浮点数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">-0.9899925</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.degrees(x)</strong></p>
+</div></blockquote>
+<p>将弧度转换为角度，返回值为浮点数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">286.4789</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">90.0</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.e</strong></p>
+</div></blockquote>
+<p>数学常量 <code class="docutils literal notranslate"><span class="pre">e</span></code>，<code class="docutils literal notranslate"><span class="pre">e</span></code>即自然常数。</p>
+<blockquote>
+<div><p><strong>math.exp(x)</strong></p>
+</div></blockquote>
+<p>返回e的x次幂，返回值为浮点数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">2.718282</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>
+<span class="go">2.718282</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.fabs(x)</strong></p>
+</div></blockquote>
+<p>返回数字的绝对值，返回值为浮点数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="o">-</span><span class="mf">3.88</span><span class="p">)</span>
+<span class="go">3.88</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.floor(x)</strong></p>
+</div></blockquote>
+<p>返回数字的下舍整数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mf">8.7</span><span class="p">)</span>
+<span class="go">8</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="go">9</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="o">-</span><span class="mf">7.6</span><span class="p">)</span>
+<span class="go">-8</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.fmod(x, y)</strong></p>
+</div></blockquote>
+<p>返回x/y的余数，返回值为浮点数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">fmod</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="go">3.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">fmod</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.modf(x)</strong></p>
+</div></blockquote>
+<p>返回由x的小数部分和整数部分组成的元组。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">modf</span><span class="p">(</span><span class="mf">17.592</span><span class="p">)</span>
+<span class="go">(0.5919991, 17.0)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.frexp(x)</strong></p>
+</div></blockquote>
+<p>返回一个元组(m,e),其计算方式为：x分别除0.5和1,得到一个值的范围，2e的值在这个范围内，e取符合要求的最大整数值,然后x/(2e)，得到m的值。如果x等于0，则m和e的值都为0，m的绝对值的范围为(0.5,1)之间，不包括0.5和1。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">frexp</span><span class="p">(</span><span class="mi">52</span><span class="p">)</span>
+<span class="go">(0.8125, 6)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.isfinite(x)</strong></p>
+</div></blockquote>
+<p>判断 x 是否为有限数，是则返回True，否则返回False。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">isfinite</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.isinf(x)</strong></p>
+</div></blockquote>
+<p>如果x是正无穷大或负无穷大，则返回True,否则返回False。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">isinf</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.isnan(x)</strong></p>
+</div></blockquote>
+<p>如果x不是数字True,否则返回False。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.ldexp(x, exp)</strong></p>
+</div></blockquote>
+<p>返回x*(2**i)的值。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">ldexp</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">4.0</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.log(x)</strong></p>
+</div></blockquote>
+<p>返回x的自然对数，x &gt; 0，小于0会报错。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">0.6931472</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.pi</strong></p>
+</div></blockquote>
+<p>数学常量 pi（圆周率，一般以π来表示）。</p>
+<blockquote>
+<div><p><strong>math.radians(x)</strong></p>
+</div></blockquote>
+<p>将角度转换为弧度，返回值为浮点数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="go">1.570796</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.sin(x)</strong></p>
+</div></blockquote>
+<p>返回x弧度的正弦值，数值在 -1 到 1 之间。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="o">-</span><span class="mi">18</span><span class="p">)</span>
+<span class="go">0.7509873</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="go">-0.2623749</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.sqrt(x)</strong></p>
+</div></blockquote>
+<p>返回数字x的平方根，返回值为浮点数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="go">2.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="go">2.645751</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.tan(x)</strong></p>
+</div></blockquote>
+<p>返回 x 弧度的正切值，数值在 -1 到 1 之间，为浮点数。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="go">-0.4523157</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>math.trunc(x)</strong></p>
+</div></blockquote>
+<p>返回x的整数部分。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">trunc</span><span class="p">(</span><span class="mf">7.123</span><span class="p">)</span>
+<span class="go">7</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="usocket-socket">
+<h2>usocket - socket模块<a class="headerlink" href="#usocket-socket" title="永久链接至标题">¶</a></h2>
+<p>usocket 模块提供对BSD套接字接口的访问。该模块实现相应CPython模块的子集。更多信息请参阅阅CPython文档：<a class="reference external" href="https://docs.python.org/3.5/library/socket.html#module-socket">socket</a></p>
+<blockquote>
+<div><p><strong>usocket.socket(af=AF_INET, type=SOCK_STREAM, proto=IPPROTO_TCP)</strong></p>
+</div></blockquote>
+<p>根据给定的地址族、套接字类型以及协议类型参数，创建一个新的套接字。注意，在大多数情况下不需要指定<em>proto</em>，也不建议这样做，因为某些MicroPython端口可能会省略 <code class="docutils literal notranslate"><span class="pre">IPPROTO_*</span></code>常量。</p>
+<p><strong>常量说明</strong></p>
+<p>af - 地址族</p>
+<ul class="simple">
+<li><p>usocket.AF_INET ：IPV4</p></li>
+<li><p>usocket.AF_INET6 ：IPV6</p></li>
+</ul>
+<p>type - socket类型</p>
+<ul class="simple">
+<li><p>usocket.SOCK_STREAM ：对应TCP的流式套接字</p></li>
+<li><p>usocket.SOCK_DGRAM ：对应UDP的数据包套接字</p></li>
+<li><p>usocket.SOCK_RAW ：原始套接字</p></li>
+</ul>
+<p>proto - 协议号</p>
+<ul class="simple">
+<li><p>usocket.IPPROTO_TCP</p></li>
+<li><p>usocket.IPPROTO_UDP</p></li>
+</ul>
+<p>其他</p>
+<ul class="simple">
+<li><p>usocket.SOL_SOCKET - 套接字选项级别，</p></li>
+<li><p>usocket.SO_REUSEADDR - 允许绑定地址快速重用</p></li>
+</ul>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">usocket</span>
+<span class="c1"># 创建基于TCP的流式套接字</span>
+<span class="n">socket</span> <span class="o">=</span> <span class="n">usocket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">usocket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">usocket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+<span class="c1"># 创建基于UDP的数据报套接字</span>
+<span class="n">socket</span> <span class="o">=</span> <span class="n">usocket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">usocket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">usocket</span><span class="o">.</span><span class="n">SOCK_DGRAM</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>usocket.getaddrinfo(host, port)</strong></p>
+</div></blockquote>
+<p>将主机域名（host）和端口（port）转换为用于创建套接字的5元组序列，元组结构如下：</p>
+<p><code class="docutils literal notranslate"><span class="pre">(family,</span> <span class="pre">type,</span> <span class="pre">proto,</span> <span class="pre">canonname,</span> <span class="pre">sockaddr)</span></code></p>
+<p><strong>socket类的方法</strong></p>
+<blockquote>
+<div><p><strong>socket.bind(address)</strong></p>
+</div></blockquote>
+<p>绑定地址address。在此之前，socket必须没有绑定过。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">address</span></code> ：由地址端口号组成的列表或者元组</p></li>
+</ul>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">addr</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="mi">6000</span><span class="p">)</span>
+<span class="n">socket</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">addr</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>socket.listen(backlog)</strong></p>
+</div></blockquote>
+<p>允许服务端接受连接，可指定最大连接数。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">backlog</span></code> ：接受套接字的最大个数，至少为0。</p></li>
+</ul>
+<blockquote>
+<div><p><strong>socket.accept()</strong></p>
+</div></blockquote>
+<p>接受连接请求，返回元组，包含新的套接字和客户端地址，形式为：<code class="docutils literal notranslate"><span class="pre">(conn,</span> <span class="pre">address)</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">conn</span></code> ：新的套接字对象，可以用来发送和接收数据</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">address</span></code> ：连接到服务器的客户端地址</p></li>
+</ul>
+<blockquote>
+<div><p><strong>socket.connect(address)</strong></p>
+</div></blockquote>
+<p>连接到指定地址address的服务器。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">address</span></code> ：包含地址和端口号的元组或列表</p></li>
+</ul>
+<blockquote>
+<div><p><strong>socket.read( [ size ] )</strong></p>
+</div></blockquote>
+<p>从套接字中读取size字节数据，返回一个字节对象。如果没有指定size，则会从套接字读取所有可读数据，直到读取到数据结束，此时作用和 <code class="docutils literal notranslate"><span class="pre">socket.readall()</span></code> 相同。</p>
+<blockquote>
+<div><p><strong>socket.readinto(buf, [ , nbytes ])</strong></p>
+</div></blockquote>
+<p>将字节读取到缓冲区buf中。如果指定了nbytes，则最多读取nbytes数量的字节；如果没有指定nbytes，则最多读取len(buf)字节。返回值是实际读取的字节数。</p>
+<blockquote>
+<div><p><strong>socket.readline()</strong></p>
+</div></blockquote>
+<p>按行读取数据，遇到换行符结束，返回读取的数据行。</p>
+<blockquote>
+<div><p><strong>socket.write(buf)</strong></p>
+</div></blockquote>
+<p>写入缓冲区的数据，buf为待写入的数据，返回实际写入的字节数。</p>
+<blockquote>
+<div><p><strong>socket.send(bytes)</strong></p>
+</div></blockquote>
+<p>发送数据，返回实际发送的字节数。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bytes</span></code> ：bytes型数据</p></li>
+</ul>
+<blockquote>
+<div><p><strong>socket.sendall(bytes)</strong></p>
+</div></blockquote>
+<p>将所有数据都发送到套接字。与<code class="docutils literal notranslate"><span class="pre">send()</span></code>方法不同的是，此方法将尝试通过依次逐块发送数据来发送所有数据。</p>
+<p>注意：该方法再非阻塞套接字上的行为是不确定的，建议再MicroPython中，使用 <code class="docutils literal notranslate"><span class="pre">write()</span></code> 方法，该方法具有相同的“禁止短写”策略来阻塞套接字，并且将返回在非阻塞套接字上发送的字节数。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bytes</span></code> ：bytes型数据</p></li>
+</ul>
+<blockquote>
+<div><p><strong>socket.sendto(bytes, address)</strong></p>
+</div></blockquote>
+<p>将数据发送到套接字。该套接字不应连接到远程套接字，因为目标套接字是由<em>address</em>指定的。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bytes</span></code> ：bytes型数据</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">address</span></code> ：包含地址和端口号的元组或列表</p></li>
+</ul>
+<blockquote>
+<div><p><strong>socket.recv(bufsize)</strong></p>
+</div></blockquote>
+<p>从套接字接收数据。返回值是一个字节对象，表示接收到的数据。一次接收的最大数据量由bufsize指定。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">bufsize</span></code> ：一次接收的最大数据量</p></li>
+</ul>
+<blockquote>
+<div><p><strong>socket.close()</strong></p>
+</div></blockquote>
+<p>将套接字标记为关闭并释放所有资源。</p>
+<blockquote>
+<div><p><strong>socket.recvfrom(bufsize)</strong></p>
+</div></blockquote>
+<p>从套接字接收数据。返回一个元组，包含字节对象和地址。</p>
+<p>返回值形式为：<code class="docutils literal notranslate"><span class="pre">(bytes,</span> <span class="pre">address)</span></code></p>
+<ul class="simple">
+<li><p>bytes ：接收数据的字节对象</p></li>
+<li><p>address ：发送数据的套接字的地址</p></li>
+</ul>
+<blockquote>
+<div><p><strong>socket.setsockopt(level, optname, value)</strong></p>
+</div></blockquote>
+<p>设置套接字选项的值。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">level</span></code> ：套接字选项级别</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">optname</span></code> ：socket选项</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> ：既可以是一个整数，也可以是一个表示缓冲区的bytes类对象</p></li>
+</ul>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">socket</span><span class="o">.</span><span class="n">setsockopt</span><span class="p">(</span><span class="n">usocket</span><span class="o">.</span><span class="n">SOL_SOCKET</span><span class="p">,</span> <span class="n">usocket</span><span class="o">.</span><span class="n">SO_REUSEADDR</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>socket.setblocking(flag)</strong></p>
+</div></blockquote>
+<p>设置套接字为阻塞模式或者非阻塞模式。如果标志为false，则将套接字设置为非阻塞，否则设置为阻塞模式。</p>
+<p>该方法是某些 <code class="docutils literal notranslate"><span class="pre">settimeout()</span></code> 调用的简写：</p>
+<p><code class="docutils literal notranslate"><span class="pre">socket.setblocking(True)</span></code> 相当于 <code class="docutils literal notranslate"><span class="pre">socket.settimeout(None)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">socket.setblocking(False)</span></code> 相当于 <code class="docutils literal notranslate"><span class="pre">socket.settimeout(0)</span></code></p>
+<blockquote>
+<div><p><strong>socket.settimeout(value)</strong></p>
+</div></blockquote>
+<p>设置套接字的超时时间，单位秒。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> ：可以是表示秒的非负浮点数，也可以是None。如果给出一个非零值，则<a class="reference external" href="http://docs.micropython.org/en/latest/library/builtins.html#OSError"><code class="docutils literal notranslate"><span class="pre">OSError</span></code></a>在该操作完成之前已超过超时时间值，则随后的套接字操作将引发异常。如果给定零，则将套接字置于非阻塞模式。如果未指定，则套接字将处于阻塞模式。</p></li>
+</ul>
+<blockquote>
+<div><p><strong>socket.makefile(mode=’rb’)</strong></p>
+</div></blockquote>
+<p>返回与套接字关联的文件对象，返回值类型与指定的参数有关。仅支持二进制模式 (rb和wb)。</p>
+<p><strong>socket通信示例</strong>：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># 客户端示例</span>
+<span class="kn">import</span> <span class="nn">usocket</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">usocket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">usocket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">usocket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>
+<span class="n">sockaddr</span> <span class="o">=</span> <span class="n">usocket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="s1">&#39;www.tongxinmao.com&#39;</span><span class="p">,</span><span class="mi">80</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">sockaddr</span><span class="p">)</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">re_data</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+    <span class="n">client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">re_data</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">))</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="uio">
+<h2>uio - 输入输出流<a class="headerlink" href="#uio" title="永久链接至标题">¶</a></h2>
+<p>uio 模块包含其他类型的stream（类文件）对象和辅助函数。该模块实现相应CPython模块的子集。更多信息请参阅阅CPython文档：<a class="reference external" href="https://docs.python.org/3.5/library/io.html#module-io">io</a></p>
+<blockquote>
+<div><p><strong>fd = uio.open(name, mode=’r’, **kwarg)</strong></p>
+</div></blockquote>
+<p>打开文件，内置<code class="docutils literal notranslate"><span class="pre">open()</span></code>函数是该函数的别名。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> ：文件名</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mode</span></code> ：打开模式</p></li>
+</ul>
+<ul class="simple">
+<li><p>r  只读模式打开文件</p>
+<ul>
+<li><p>w  写入模式打开文件，每次写入会覆盖上次写入数据</p></li>
+<li><p>a  只写追加模式打开文件，可连续写入文件数据而不是覆盖数据</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">**kwarg</span></code>：可变长参数列表</p></li>
+</ul>
+<blockquote>
+<div><p><strong>fd.close()</strong></p>
+</div></blockquote>
+<p>关闭打开的文件。</p>
+</div>
+<div class="section" id="ustruct">
+<h2>ustruct - 打包和解压原始数据类型<a class="headerlink" href="#ustruct" title="永久链接至标题">¶</a></h2>
+<p>该模块实现相应CPython模块的子集。更多信息请参阅阅CPython文档：<a class="reference external" href="https://docs.python.org/3.5/library/struct.html#module-struct">struct</a></p>
+<p><strong>字节顺序，大小和对齐方式</strong></p>
+<p>默认情况下，C类型以机器的本机格式和字节顺序表示，并在必要时通过跳过填充字节来正确对齐（根据C编译器使用的规则）。根据下表，格式字符串的第一个字符可用于指示打包数据的字节顺序，大小和对齐方式：</p>
+<p>| Character | Byte order             | Size     | Alignment |
+| ——— | ———————- | ——– | ——— |
+| <code class="docutils literal notranslate"><span class="pre">&#64;</span></code>       | native                 | native   | native    |
+| <code class="docutils literal notranslate"><span class="pre">=</span></code>       | native                 | standard | none      |
+| <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>       | little-endian          | standard | none      |
+| <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>       | big-endian             | standard | none      |
+| <code class="docutils literal notranslate"><span class="pre">!</span></code>       | network (= big-endian) | standard | none      |</p>
+<p><strong>格式化字符表</strong></p>
+<p>| Format | C Type               | Python type       | Standard size |
+| —— | ——————– | —————– | ————- |
+| <code class="docutils literal notranslate"><span class="pre">x</span></code>    | pad byte             | no value          |               |
+| <code class="docutils literal notranslate"><span class="pre">c</span></code>    | <code class="docutils literal notranslate"><span class="pre">char</span></code>               | bytes of length 1 | 1             |
+| <code class="docutils literal notranslate"><span class="pre">b</span></code>    | <code class="docutils literal notranslate"><span class="pre">signed</span> <span class="pre">char</span></code>        | integer           | 1             |
+| <code class="docutils literal notranslate"><span class="pre">B</span></code>    | <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">char</span></code>      | integer           | 1             |
+| <code class="docutils literal notranslate"><span class="pre">?</span></code>    | <code class="docutils literal notranslate"><span class="pre">_Bool</span></code>              | bool              | 1             |
+| <code class="docutils literal notranslate"><span class="pre">h</span></code>    | <code class="docutils literal notranslate"><span class="pre">short</span></code>              | integer           | 2             |
+| <code class="docutils literal notranslate"><span class="pre">H</span></code>    | <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">short</span></code>     | integer           | 2             |
+| <code class="docutils literal notranslate"><span class="pre">i</span></code>    | <code class="docutils literal notranslate"><span class="pre">int</span></code>                | integer           | 4             |
+| <code class="docutils literal notranslate"><span class="pre">I</span></code>    | <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">int</span></code>       | integer           | 4             |
+| <code class="docutils literal notranslate"><span class="pre">l</span></code>    | <code class="docutils literal notranslate"><span class="pre">long</span></code>               | integer           | 4             |
+| <code class="docutils literal notranslate"><span class="pre">L</span></code>    | <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">long</span></code>      | integer           | 4             |
+| <code class="docutils literal notranslate"><span class="pre">q</span></code>    | <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">long</span></code>          | integer           | 8             |
+| <code class="docutils literal notranslate"><span class="pre">Q</span></code>    | <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">long</span> <span class="pre">long</span></code> | integer           | 8             |
+| <code class="docutils literal notranslate"><span class="pre">n</span></code>    | <code class="docutils literal notranslate"><span class="pre">ssize_t</span></code>            | integer           |               |
+| <code class="docutils literal notranslate"><span class="pre">N</span></code>    | <code class="docutils literal notranslate"><span class="pre">size_t</span></code>             | integer           |               |
+| <code class="docutils literal notranslate"><span class="pre">f</span></code>    | <code class="docutils literal notranslate"><span class="pre">float</span></code>              | float             | 4             |
+| <code class="docutils literal notranslate"><span class="pre">d</span></code>    | <code class="docutils literal notranslate"><span class="pre">double</span></code>             | float             | 8             |
+| <code class="docutils literal notranslate"><span class="pre">s</span></code>    | <code class="docutils literal notranslate"><span class="pre">char[]</span></code>             | bytes             |               |
+| <code class="docutils literal notranslate"><span class="pre">p</span></code>    | <code class="docutils literal notranslate"><span class="pre">char[]</span></code>             | bytes             |               |
+| <code class="docutils literal notranslate"><span class="pre">P</span></code>    | <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">*</span></code>             | integer           |               |</p>
+<p>默认情况下，C类型以机器的本机格式和字节顺序表示，并在必要时通过跳过填充字节来正确对齐（根据C编译器使用的规则）</p>
+<blockquote>
+<div><p><strong>ustruct.calcsize(fmt)</strong></p>
+</div></blockquote>
+<p>返回存放 fmt 需要的字节数。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fmt</span></code> ：格式字符的类型，详情见上文格化式字符表</p></li>
+</ul>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ustruct</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ustruct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="s1">&#39;i&#39;</span><span class="p">)</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ustruct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="p">)</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ustruct</span><span class="o">.</span><span class="n">calcsize</span><span class="p">(</span><span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<span class="go">8</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>ustruct.pack(fmt, v1, v2, …)</strong></p>
+</div></blockquote>
+<p>按照格式字符串 fmt 压缩参数v1、 v2、…返回值是参数编码后的字节对象。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fmt</span></code> ：格式字符的类型，详情见上文格化式字符表</p></li>
+</ul>
+<blockquote>
+<div><p><strong>unstrcut.unpack(fmt, data)</strong></p>
+</div></blockquote>
+<p>根据格式化字符串 fmt 对数据进行解压，返回值为一个元组。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ustruct</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ustruct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;ii&#39;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>  <span class="c1">#打包2两个整数</span>
+<span class="go">b&#39;\x07\x00\x00\x00\t\x00\x00\x00&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ustruct</span><span class="o">.</span><span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;ii&#39;</span><span class="p">,</span> <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x07\x00\x00\x00\t\x00\x00\x00</span><span class="s1">&#39;</span><span class="p">)</span>  <span class="c1">#解压两个整数</span>
+<span class="go">(7, 9)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>ustruct.pack_info(fmt, buffer, offset, v1, v2, …)</strong></p>
+</div></blockquote>
+<p>根据格式字符串fmt将值v1、v2、 …打包到从<code class="docutils literal notranslate"><span class="pre">offset</span></code>开始的缓冲区中。从缓冲区的末尾算起，<code class="docutils literal notranslate"><span class="pre">offset</span></code>可能为负。</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">fmt</span></code> ：格式字符的类型，详情见上文格化式字符表</p></li>
+</ul>
+<blockquote>
+<div><p><strong>unstruct.unpack_from(fmt, data, offset=0)</strong></p>
+</div></blockquote>
+<p>根据格式化字符串 <code class="docutils literal notranslate"><span class="pre">fmt</span></code> 解析从 <code class="docutils literal notranslate"><span class="pre">offest</span></code> 开始的数据解压，从缓冲区末尾开始计数的偏移量可能为负值。返回值是解压值的元组。</p>
+</div>
+<div class="section" id="ujson-json">
+<h2>ujson - JSON编码和解码<a class="headerlink" href="#ujson-json" title="永久链接至标题">¶</a></h2>
+<p>ujson 模块实现在Python数据对象和JSON数据格式之间进行转换的功能。该模块实现相应CPython模块的子集。更多信息请参阅阅CPython文档：<a class="reference external" href="https://docs.python.org/3.5/library/json.html#module-json">json</a></p>
+<blockquote>
+<div><p><strong>ujson.dump(obj, stream)</strong></p>
+</div></blockquote>
+<p>将 <code class="docutils literal notranslate"><span class="pre">obj</span></code> 数据对象转化成 JSON字符串，将其写入到给定的 <code class="docutils literal notranslate"><span class="pre">stream</span></code> 中。</p>
+<blockquote>
+<div><p><strong>ujson.dumps(dict)</strong></p>
+</div></blockquote>
+<p>将 <code class="docutils literal notranslate"><span class="pre">dict</span></code> 类型的数据转换成str。</p>
+<blockquote>
+<div><p><strong>ujson.load(stream)</strong></p>
+</div></blockquote>
+<p>解析给定的数据 <code class="docutils literal notranslate"><span class="pre">stream</span></code>，将其解释为JSON字符串并反序列化成Python对象。</p>
+<blockquote>
+<div><p><strong>ujson.loads(str)</strong></p>
+</div></blockquote>
+<p>解析JSON字符串并返回<code class="docutils literal notranslate"><span class="pre">obj</span></code>对象</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ujson</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">msg</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,{</span><span class="s1">&#39;bar&#39;</span><span class="p">:(</span><span class="s1">&#39;baz&#39;</span><span class="p">,</span><span class="kc">None</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="go">[&#39;foo&#39;, {&#39;bar&#39;: (&#39;baz&#39;, None, 1, 2)}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">ujson</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">[&quot;foo&quot;, {&quot;bar&quot;: [&quot;baz&quot;, null, 1, 2]}]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s1</span> <span class="o">=</span> <span class="n">ujson</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<span class="go">[&#39;foo&#39;, {&#39;bar&#39;: [&#39;baz&#39;, None, 1, 2]}]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="utime">
+<h2>utime - 与时间相关功能<a class="headerlink" href="#utime" title="永久链接至标题">¶</a></h2>
+<p>utime 模块用于获取当前时间和日期、测量时间间隔和延迟。该模块实现相应CPython模块的子集。更多信息请参阅阅CPython文档：<a class="reference external" href="https://docs.python.org/3.5/library/time.html#module-time">time</a></p>
+<blockquote>
+<div><p><strong>utime.localtime([secs])</strong></p>
+</div></blockquote>
+<p>该函数用来将一个以秒表示的时间转换为一个元组，元组包含了了年、月、日、时、分、秒、星期、一年中第几天；如果没有给定参数sec，则使用RTC时间。返回值形式如下：</p>
+<p><code class="docutils literal notranslate"><span class="pre">(year,</span> <span class="pre">month,</span> <span class="pre">mday,</span> <span class="pre">hour,</span> <span class="pre">minute,</span> <span class="pre">second,</span> <span class="pre">weekday,</span> <span class="pre">yearday)</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">year</span></code> ：年份，int型</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">month</span></code> ：月份，1~12，int型</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mday</span></code> ：日，当月多少号，1~31，int型</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hour</span></code> ：小时，0~23，int型</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">minute</span></code> ：分钟，0~59，int型</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">second</span></code> ：秒，0~59，int型</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">weekday</span></code> ：星期，周一到周日是0~6，int型</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">yearday</span></code> ：一年中的第多少天，int型</p></li>
+</ul>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">utime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">utime</span><span class="o">.</span><span class="n">localtime</span><span class="p">()</span>
+<span class="go">(2020, 9, 29, 8, 54, 42, 1, 273)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">utime</span><span class="o">.</span><span class="n">localtime</span><span class="p">(</span><span class="mi">646898736</span><span class="p">)</span>
+<span class="go">(2020, 7, 1, 6, 5, 36, 2, 183)</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>utime.mktime(date)</strong></p>
+</div></blockquote>
+<p>该函数作用与locatime()相反，它将一个存放在元组中的时间转换为以秒计的时间戳。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">utime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">date</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">273</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">utime</span><span class="o">.</span><span class="n">mktime</span><span class="p">(</span><span class="n">date</span><span class="p">)</span>
+<span class="go">1601340882</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>utime.sleep(seconds)</strong></p>
+</div></blockquote>
+<p>休眠给定秒数的时间。</p>
+<p>注意：sleep()函数的调用会导致程序休眠阻塞。</p>
+<blockquote>
+<div><p><strong>utime.sleep_ms(ms)</strong></p>
+</div></blockquote>
+<p>休眠给定毫秒数的时间。</p>
+<p>注意：sleep_ms()函数的调用会导致程序休眠阻塞。</p>
+<blockquote>
+<div><p><strong>utime.sleep_us(us)</strong></p>
+</div></blockquote>
+<p>休眠给定微秒的时间。</p>
+<p>注意：sleep_us()函数的调用会导致程序休眠阻塞。</p>
+<blockquote>
+<div><p><strong>utime.ticks_ms()</strong></p>
+</div></blockquote>
+<p>返回不断递增的毫秒计数器，在某些值后会重新计数(未指定)。计数值本身无特定意义，只适合用在 <code class="docutils literal notranslate"><span class="pre">ticks_diff()</span></code>函数中。</p>
+<p>注意：sleep_us()函数的调用会导致程序休眠阻塞。</p>
+<blockquote>
+<div><p><strong>utime.ticks_us()</strong></p>
+</div></blockquote>
+<p>和<code class="docutils literal notranslate"><span class="pre">ticks_ms()</span></code>类似，只是返回微秒计数器。</p>
+<blockquote>
+<div><p><strong>utime.ticks_cpu()</strong></p>
+</div></blockquote>
+<p>和 ticks_ms/ticks_us 类似，具有更高精度 (使用 CPU 时钟)。</p>
+<blockquote>
+<div><p><strong>utime.ticks_diff(old, new)</strong></p>
+</div></blockquote>
+<p>计算两次调用<code class="docutils literal notranslate"> <span class="pre">ticks_ms()</span></code>， <code class="docutils literal notranslate"><span class="pre">ticks_us()</span></code>，或 <code class="docutils literal notranslate"><span class="pre">ticks_cpu()</span></code>之间的时间。因为这些函数的计数值可能会回绕，所以不能直接相减，需要使用 ticks_diff() 函数。“旧” 时间需要在 “新” 时间之前，否则结果无法确定。这个函数不要用在计算很长的时间 (因为 ticks_*() 函数会回绕，通常周期不是很长)。通常用法是在带超时的轮询事件中调用。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">utime</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">utime</span><span class="o">.</span><span class="n">ticks_us</span><span class="p">()</span>
+<span class="k">while</span> <span class="n">pin</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">utime</span><span class="o">.</span><span class="n">ticks_diff</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">ticks_us</span><span class="p">(),</span> <span class="n">start</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TimeoutError</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>utime.time()</strong></p>
+</div></blockquote>
+<p>返回自纪元以来的秒数（以整数形式）。如果未设置RTC，则此函数返回自特定于端口的参考时间点以来的秒数（对于不具有电池后备RTC的嵌入式板，通常是由于加电或复位）。如果要开发可移植的MicroPython应用程序，则不应依赖此功能提供高于秒的精度。如果需要更高的精度，请使用 <code class="docutils literal notranslate"><span class="pre">ticks_ms()</span></code>和<code class="docutils literal notranslate"><span class="pre">ticks_us()</span></code>函数，如果需要日历时间，则 <code class="docutils literal notranslate"><span class="pre">localtime()</span></code>不带参数会更好。</p>
+</div>
+<div class="section" id="sys">
+<h2>sys - 系统相关功能<a class="headerlink" href="#sys" title="永久链接至标题">¶</a></h2>
+<p>sys 模块中提供了与QuecPython运行环境有关的函数和变量。该模块实现相应CPython模块的子集。更多信息请参阅阅CPython文档：<a class="reference external" href="https://docs.python.org/3.5/library/sys.html#module-sys">sys</a></p>
+<p><strong>常数说明</strong></p>
+<blockquote>
+<div><p><strong>sys.argv</strong></p>
+</div></blockquote>
+<p>当前程序启动的可变参数列表。</p>
+<blockquote>
+<div><p><strong>sys.byteorder</strong></p>
+</div></blockquote>
+<p>字节顺序 (‘little’  - 小端， ‘big’ - 大端)。</p>
+<blockquote>
+<div><p><strong>sys.implementation</strong></p>
+</div></blockquote>
+<p>返回当前microPython版本信息。对于MicroPython，它具有以下属性：</p>
+<ul class="simple">
+<li><p>name - 字符串“ micropython”</p></li>
+<li><p>version - 元组（主要，次要，微型），例如（1、7、0）</p></li>
+</ul>
+<p>建议使用此对象来将MicroPython与其他Python实现区分开。</p>
+<blockquote>
+<div><p><strong>sys.maxsize</strong></p>
+</div></blockquote>
+<p>本机整数类型可以在当前平台上保留的最大值，如果它小于平台最大值，则为MicroPython整数类型表示的最大值（对于不支持长整型的MicroPython端口就是这种情况）。</p>
+<blockquote>
+<div><p><strong>sys.modules</strong></p>
+</div></blockquote>
+<p>已载入模块的字典。</p>
+<blockquote>
+<div><p><strong>sys.platform</strong></p>
+</div></blockquote>
+<p>MicroPython运行的平台。</p>
+<blockquote>
+<div><p><strong>sys.stdin</strong></p>
+</div></blockquote>
+<p>标准输入（默认是USB虚拟串口，可选其他串口）。</p>
+<blockquote>
+<div><p><strong>sys.stdout</strong></p>
+</div></blockquote>
+<p>标准输出（默认是USB虚拟串口，可选其他串口）。</p>
+<blockquote>
+<div><p><strong>sys.version</strong></p>
+</div></blockquote>
+<p>MicroPython 语言版本，字符串格式。</p>
+<blockquote>
+<div><p><strong>sys.version_info</strong></p>
+</div></blockquote>
+<p>MicroPython  语言版本，整数元组格式。</p>
+<p><strong>方法</strong></p>
+<blockquote>
+<div><p><strong>sys.exit(retval=0)</strong></p>
+</div></blockquote>
+<p>使用给定的参数退出当前程序。与此同时，该函数会引发<code class="docutils literal notranslate"><span class="pre">SystemExit</span></code>退出。如果给定了参数，则将其值作为参数赋值给<code class="docutils literal notranslate"><span class="pre">SystemExit</span></code>。</p>
+<blockquote>
+<div><p><strong>sys.print_exception(exc, file=sys.stdout)</strong></p>
+</div></blockquote>
+<p>打印异常到文件对象，默认是 sys.stdout，即输出异常信息的标准输出。</p>
+</div>
+<div class="section" id="uzlib-zlib">
+<h2>uzlib - zlib解压缩<a class="headerlink" href="#uzlib-zlib" title="永久链接至标题">¶</a></h2>
+<p>uzlib 模块解压缩用<a class="reference external" href="https://en.wikipedia.org/wiki/DEFLATE">DEFLATE算法</a>压缩的二进制数据 （通常在zlib库和gzip存档器中使用），压缩尚未实现。该模块实现相应CPython模块的子集。更多信息请参阅阅CPython文档：<a class="reference external" href="https://docs.python.org/3.5/library/zlib.html#module-zlib">zlib</a></p>
+<p>注意：解压缩前，应检查模块内可使用的空间，确保有足够空间解压文件。</p>
+<blockquote>
+<div><p><strong>uzlib.decompress(data, wbits=0, bufsize=0)</strong></p>
+</div></blockquote>
+<p>返回解压后的 bytes 对象。<code class="docutils literal notranslate"><span class="pre">wbits</span></code>是解压时使用的DEFLATE字典窗口大小（8-15，字典大小是<code class="docutils literal notranslate"><span class="pre">wbits</span></code>值的2的幂）。如果该值为正，则假定<code class="docutils literal notranslate"><span class="pre">data</span></code>为zlib流（带有zlib标头），如果为负，则假定为原始的DEFLATE流。<code class="docutils literal notranslate"><span class="pre">bufsize</span></code>参数是为了与CPython兼容，将被忽略。</p>
+<blockquote>
+<div><p><strong>class uzlib.DecompIO(stream, wbits=0)</strong></p>
+</div></blockquote>
+<p>创建一个<code class="docutils literal notranslate"><span class="pre">stream</span></code>装饰器，该装饰器允许在另一个流中透明地压缩数据。这允许处理数据大于可用堆大小的压缩流。wbits的值除了上面所述的值以外，还可以取值24..31（16 + 8..15），这表示输入流具有gzip标头。</p>
+</div>
+<div class="section" id="thread">
+<h2>_thread - 多线程<a class="headerlink" href="#thread" title="永久链接至标题">¶</a></h2>
+<p>_thread 模块提供创建新线程的方法，并提供互斥锁。</p>
+<blockquote>
+<div><p><strong>_thread.get_ident()</strong></p>
+</div></blockquote>
+<p>获取当前线程号。</p>
+<blockquote>
+<div><p><strong>_thread.get_heap_size()</strong></p>
+</div></blockquote>
+<p>获取系统剩余内存大小。</p>
+<blockquote>
+<div><p><strong>_thread.stack_size(size)</strong></p>
+</div></blockquote>
+<p>设置创建新线程使用的栈大小（以字节为单位），默认为8k。</p>
+<blockquote>
+<div><p><strong>_thread.start_new_thread(function, args)</strong></p>
+</div></blockquote>
+<p>创建一个新线程，接收执行函数和被执行函数参数。</p>
+<blockquote>
+<div><p><strong>_thread.allocate_lock()</strong></p>
+</div></blockquote>
+<p>创建一个互斥锁对象。</p>
+<p>示例：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">_thread</span>
+<span class="n">lock</span> <span class="o">=</span> <span class="n">_thread</span><span class="o">.</span><span class="n">allocate_lock</span><span class="p">()</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>lock.acquire()</strong></p>
+</div></blockquote>
+<p>获取锁，成功返回True，否则返回False。</p>
+<blockquote>
+<div><p><strong>lock.release()</strong></p>
+</div></blockquote>
+<p>释放锁。</p>
+<blockquote>
+<div><p><strong>lock.locked()</strong></p>
+</div></blockquote>
+<p>返回锁的状态，True表示被某个线程获取，False则表示没有。</p>
+<p><strong>_thread使用示例</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">_thread</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">lock</span> <span class="o">=</span> <span class="n">_thread</span><span class="o">.</span><span class="n">allocate_lock</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">th_func</span><span class="p">(</span><span class="n">delay</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+	<span class="k">global</span> <span class="n">a</span>
+	<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+		<span class="n">lock</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>  <span class="c1"># 获取锁</span>
+		<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="mi">10</span><span class="p">:</span>
+			<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;thread </span><span class="si">%d</span><span class="s1"> exit&#39;</span> <span class="o">%</span> <span class="nb">id</span><span class="p">)</span>
+			<span class="n">lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span> <span class="c1"># 释放锁</span>
+			<span class="k">break</span>
+		<span class="n">a</span><span class="o">+=</span><span class="mi">1</span>
+		<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;[thread </span><span class="si">%d</span><span class="s1">] a is </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">a</span><span class="p">))</span>
+		<span class="n">lock</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">_thread</span><span class="o">.</span><span class="n">start_new_thread</span><span class="p">(</span><span class="n">th_func</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="uhashlib">
+<h2>uhashlib - 哈希算法<a class="headerlink" href="#uhashlib" title="永久链接至标题">¶</a></h2>
+<p>模块功能: 实现二进制数据散列算法,目前支持sha256，sha1，MD5。</p>
+<blockquote>
+<div><p>​	<strong>hash_obj = uhashlib.sha256(bytes)</strong></p>
+</div></blockquote>
+<p>创建一个SHA256哈希对象</p>
+<ul class="simple">
+<li><p>参数</p></li>
+</ul>
+<p>| 参数  | 参数类型 | 参数说明                                              |
+| —– | ——– | —————————————————– |
+| bytes | bytes    | 可选参数，可在创建时传入bytes数据，也可通过update方法 |</p>
+<ul class="simple">
+<li><p>返回值</p></li>
+</ul>
+<p>SHA256哈希对象</p>
+<blockquote>
+<div><p>​	<strong>hash_obj  = uhashlib.sha1(bytes)</strong></p>
+</div></blockquote>
+<p>创建一个SHA1哈希对象</p>
+<ul class="simple">
+<li><p>参数</p></li>
+</ul>
+<p>| 参数  | 参数类型 | 参数说明                                              |
+| —– | ——– | —————————————————– |
+| bytes | bytes    | 可选参数，可在创建时传入bytes数据，也可通过update方法 |</p>
+<ul class="simple">
+<li><p>返回值</p></li>
+</ul>
+<p>SHA1哈希对象</p>
+<blockquote>
+<div><p>​	<strong>hash_obj  = uhashlib.md5(bytes)</strong></p>
+</div></blockquote>
+<p>创建一个MD5哈希对象</p>
+<ul class="simple">
+<li><p>参数</p></li>
+</ul>
+<p>| 参数  | 参数类型 | 参数说明                                              |
+| —– | ——– | —————————————————– |
+| bytes | bytes    | 可选参数，可在创建时传入bytes数据，也可通过update方法 |</p>
+<ul class="simple">
+<li><p>返回值</p></li>
+</ul>
+<p>MD5哈希对象</p>
+<p><strong>哈希对象方法</strong></p>
+<blockquote>
+<div><p>​	<strong>hash_obj .update(bytes)</strong></p>
+</div></blockquote>
+<p>将更多的bytes数据加到散列</p>
+<ul class="simple">
+<li><p>参数</p></li>
+</ul>
+<p>| 参数  | 参数类型 | 参数说明         |
+| —– | ——– | —————- |
+| bytes | bytes    | 需要被加密的数据 |</p>
+<ul class="simple">
+<li><p>返回值</p></li>
+</ul>
+<p>无</p>
+<blockquote>
+<div><p>​	<strong>hash_obj .digest()</strong></p>
+</div></blockquote>
+<p>返回通过哈希传递的所有数据的散列，数据为字节类型。调用此方法后，无法再将更多的数据送入散列。</p>
+<ul class="simple">
+<li><p>参数</p></li>
+</ul>
+<p>无</p>
+<ul class="simple">
+<li><p>返回值</p></li>
+</ul>
+<p>返回加密后字节类型的数据</p>
+<p><strong>使用实例</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">uhashlib</span>
+<span class="kn">import</span> <span class="nn">ubinascii</span>
+
+<span class="n">hash_obj</span>  <span class="o">=</span> <span class="n">uhashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">()</span>  <span class="c1"># 创建hash对象</span>
+<span class="n">hash_obj</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;QuecPython&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
+<span class="c1"># b&quot;\x1e\xc6gq\xb3\xa9\xac&gt;\xa4\xc4O\x00\x9eTW\x97\xd4.\x9e}Bo\xff\x82u\x89Th\xfe&#39;\xc6\xcd&quot;</span>
+<span class="c1"># 转成十六进制表示</span>
+<span class="n">hex_msg</span> <span class="o">=</span> <span class="n">ubinascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+<span class="c1"># b&#39;1ec66771b3a9ac3ea4c44f009e545797d42e9e7d426fff8275895468fe27c6cd&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; 版权所有 2020, rivern
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
