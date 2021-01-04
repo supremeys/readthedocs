@@ -4,7 +4,7 @@ repo_url: https://github.com/supremeys/QuecPython/
 edit_uri: tree/main/docs/
 
 nav:
-    - QuecPython理论学习: QuecPython概况.md
+    - QuecPython理论学习: QuecPython概述.md
     - QuecPython开发准备: QuecPython开发准备.md
     - QuecPython快速入门: QuecPython快速入门.md
     - QuecPython标准库介绍: QuecPython标准库介绍.md
