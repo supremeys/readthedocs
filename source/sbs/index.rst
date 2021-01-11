@@ -3,7 +3,7 @@
    :maxdepth: 2
 
 	入门 <modules-and-boards-previous>
-    QuecPython 基础操作说明 (PDF) <https://espressif.com/sites/default/files/documentation/esp32_technical_reference_manual_cn.pdf>
+    QuecPython 基础操作说明 (PDF) <sbs/edu/basic.pdf>
     QuecPython 技术与资源综述 (PDF) <https://espressif.com/sites/default/files/documentation/esp32_datasheet_cn.pdf>
 	云平台 <modules-and-boards-previous>
     接入阿里云应用 开发指导 (PDF) <https://espressif.com/sites/default/files/documentation/esp32_hardware_design_guidelines_cn.pdf>

@@ -41,7 +41,5 @@ easy, efficient and reliable.
    手把手教学<sbs/index>
    QuecPython学习大纲 <study/index>
    API类库 <api/index>
-   Languages/语言 <languages>
-   Wiki 首页 </>
    官方网站 <//qpy.quectel.com>
    资料下载 <//qpy.quectel.com/down.html>

@@ -4,19 +4,5 @@ repo_url: https://github.com/supremeys/QuecPython/
 edit_uri: tree/main/docs/
 
 nav:
-    - QuecPython理论学习: QuecPython概述.md
-    - QuecPython开发准备: QuecPython开发准备.md
-    - QuecPython快速入门: QuecPython快速入门.md
-    - QuecPython标准库介绍: QuecPython标准库介绍.md
-    - QuecPython平台性接口: QuecPython平台性接口.md
-    - QuecPython驱动子系统: QuecPython驱动子系统.md
-    - QuecPython无线联网开发: QuecPython无线联网开发.md
-    - QuecPython网络应用开发: QuecPython网络应用开发.md
-    - QuecPython云服务: QuecPython云服务.md
-    - QuecPython小实验: QuecPython小实验.md
-    - QuecPython应用编程框架: QuecPython应用编程框架.md
-    - QuecPython Solution方案开发: QuecPython Solution方案开发.md
-    - QuecPython FAQ&DEBUG: QuecPython FAQ&DEBUG.md
-    - QuecPython产品开发及量产: QuecPython产品开发及量产.md
 
 
