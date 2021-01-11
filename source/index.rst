@@ -40,6 +40,6 @@ easy, efficient and reliable.
    视频教程 <https://space.bilibili.com/491326023/channel/detail?cid=150963>
    QuecPython学习大纲 <study/index>
    手把手教学<sbs/index>
-   API类库 <api/index>
-   官方网站 <//qpy.quectel.com>
-   资料下载 <//qpy.quectel.com/down.html>
+   API类库 <api/README.md>
+   官方网站 <https://qpy.quectel.com>
+   资料下载 <https://qpy.quectel.com/down.html>
